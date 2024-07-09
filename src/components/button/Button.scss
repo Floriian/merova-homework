@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+
+button {
+  background-color: #0076cc;
+  color: $text-color;
+  border-radius: 17px;
+  font-weight: 600;
+  padding: 1rem;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #0067b0;
+    transition: all;
+    transition-duration: 150ms;
+  }
+}
