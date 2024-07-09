@@ -1,5 +1,5 @@
-@import "../scss/variables.scss";
+@import "../styles/variables.scss";
+@import "../styles/helpers.scss";
 body {
   background: linear-gradient(90deg, #122c6e 0%, #034d49 100%);
-  color: $text-color;
 }
