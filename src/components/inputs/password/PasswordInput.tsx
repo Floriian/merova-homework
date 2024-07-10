@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { InputProps } from "../types";
 import "./PasswordInput.scss";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 export const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, errorText, label, ...props }, ref) => {
@@ -11,11 +12,8 @@ export const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
       <div ref={ref}>
         {label && <label htmlFor={props.id}>{label}</label>}
         <input {...props} type={show ? "text" : "password"} />
-        <span
-          className={"material-symbols-outlined toggle"}
-          onClick={() => setShow(!show)}
-        >
-          visibility{show && "_off"}
+        <span className="toggle" onClick={() => setShow(!show)}>
+          {show ? <VisibilityOff /> : <Visibility />}
         </span>
         {errorText && <p>{errorText.message}</p>}
       </div>
