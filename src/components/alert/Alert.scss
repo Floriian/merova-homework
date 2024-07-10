@@ -1,0 +1,11 @@
+.alert {
+  background-color: rgb(245, 144, 144);
+  border: 2px solid red;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 1rem;
+  color: white;
+}
