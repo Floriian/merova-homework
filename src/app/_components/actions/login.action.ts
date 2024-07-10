@@ -2,9 +2,10 @@
 
 import { redirect } from "next/navigation";
 import { loginSchema, LoginSchema } from "../schemas";
-import { User } from "@/app/app/_components";
 import { cookies } from "next/headers";
-import { AUTH_COOKIE_NAME } from "@/constants";
+import { AUTH_COOKIE_NAME, ONE_HOUR } from "@/constants";
+import { User } from "@/app/app/_components";
+import { fetchApi } from "@/utils";
 
 export const loginUser = async (data: LoginSchema) => {
   //Every action is a network request, so let's validate the request data.
@@ -15,12 +16,9 @@ export const loginUser = async (data: LoginSchema) => {
     };
   }
 
-  const request = await fetch("https://dummyjson.com/auth/login", {
+  const request = await fetchApi("/auth/login", {
     method: "POST",
     cache: "no-cache",
-    headers: {
-      "Content-Type": "application/json",
-    },
     body: JSON.stringify({
       username: data.email,
       password: data.password,

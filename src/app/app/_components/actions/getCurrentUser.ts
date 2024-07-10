@@ -3,12 +3,12 @@
 import { AUTH_COOKIE_NAME } from "@/constants";
 import { cookies } from "next/headers";
 import { User } from "../schemas";
+import { fetchApi } from "@/utils";
 
 export const getCurrentUser = async () => {
   const cookie = cookies().get(AUTH_COOKIE_NAME);
 
-  const request = await fetch("https://dummyjson.com/auth/me", {
-    method: "GET",
+  const request = await fetchApi("/auth/me", {
     headers: {
       Authorization: `Bearer ${cookie?.value}`,
     },
