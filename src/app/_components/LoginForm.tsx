@@ -1,7 +1,14 @@
 "use client";
 import { Box } from "@/components/box/Box";
 import styles from "./LoginForm.module.scss";
-import { Alert, Button, Checkbox, Input, Title } from "@/components";
+import {
+  Alert,
+  Button,
+  Checkbox,
+  Input,
+  PasswordInput,
+  Title,
+} from "@/components";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { loginSchema, LoginSchema } from "./schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -36,7 +43,7 @@ export function LoginForm() {
           {...register("email")}
           errorText={errors.email}
         />
-        <Input
+        <PasswordInput
           label="Jelszó:"
           {...register("password")}
           errorText={errors.password}
