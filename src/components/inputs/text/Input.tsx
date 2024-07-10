@@ -1,11 +1,6 @@
 import React from "react";
 import "./Input.scss";
-import { FieldError } from "react-hook-form";
-
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  errorText?: FieldError | undefined;
-}
+import { InputProps } from "../types";
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, errorText, label, ...props }, ref) => {
