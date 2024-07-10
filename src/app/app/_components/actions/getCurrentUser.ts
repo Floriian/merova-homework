@@ -1,12 +1,12 @@
 "use server";
 
-import { AUTH_COOKIE_NAME } from "@/constants";
+import { AUTH_COOKIE } from "@/constants";
 import { cookies } from "next/headers";
 import { User } from "../schemas";
 import { fetchApi } from "@/utils";
 
 export const getCurrentUser = async () => {
-  const cookie = cookies().get(AUTH_COOKIE_NAME);
+  const cookie = cookies().get(AUTH_COOKIE);
 
   const request = await fetchApi("/auth/me", {
     headers: {

@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { loginSchema, LoginSchema } from "../schemas";
 import { cookies } from "next/headers";
-import { AUTH_COOKIE_NAME, ONE_HOUR } from "@/constants";
+import { AUTH_COOKIE, ONE_HOUR } from "@/constants";
 import { User } from "@/app/app/_components";
 import { fetchApi } from "@/utils";
 
@@ -27,7 +27,7 @@ export const loginUser = async (data: LoginSchema) => {
 
   if (request.ok) {
     const user = (await request.json()) as User;
-    cookies().set(AUTH_COOKIE_NAME, user.token, {
+    cookies().set(AUTH_COOKIE, user.token, {
       secure: true,
       httpOnly: true,
     });
