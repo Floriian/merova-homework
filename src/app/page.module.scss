@@ -1,0 +1,9 @@
+.pagebox {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 5rem);
+  gap: 3rem;
+}
