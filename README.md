@@ -13,4 +13,4 @@ NODE VERSION: 21.7.2
 
 ## `src/app`:
 
-`_components` folder: Place components, schemas types or any other magic stuff if its a very specific controller like Logout button.
+`_components` folder: Place components, schemas types or any other magic stuff if its a very specific components like Logout button.
