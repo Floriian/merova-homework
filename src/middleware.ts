@@ -7,7 +7,6 @@ export async function middleware(request: NextRequest) {
       await authActions.getCurrentUser();
       NextResponse.next();
     } catch (e) {
-      console.log(e);
       return NextResponse.redirect(new URL("/", request.url));
     }
   }
