@@ -5,7 +5,7 @@ export const Button = React.forwardRef<
   HTMLButtonElement,
   React.HTMLAttributes<HTMLButtonElement>
 >(({ className, ...props }, ref) => (
-  <button ref={ref} className={className}>
+  <button ref={ref} className={className} {...props}>
     {props.children}
   </button>
 ));
