@@ -1,0 +1,15 @@
+.page {
+  display: flex;
+  height: calc(100vh - 5rem);
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 33%;
+}

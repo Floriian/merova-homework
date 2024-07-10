@@ -1,3 +1,10 @@
+import { Logo } from "@/components";
+import { LoginForm } from "./_components";
 export default function Home() {
-  return <h1>hello world!</h1>;
+  return (
+    <div className="pagebox">
+      <Logo />
+      <LoginForm />
+    </div>
+  );
 }
